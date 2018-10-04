@@ -21,9 +21,9 @@ export class EmployeeComponent implements OnInit {
 
     this.employeeForm = new FormGroup({
       EmployeeID : new FormControl(),
-      EmpCode : new FormControl('',Validators.required),
       FirstName : new FormControl('',Validators.required),
       LastName : new FormControl('',Validators.required),
+      EmpCode : new FormControl('',Validators.required),
       Office : new FormControl('',Validators.required),
       Position : new FormControl('',Validators.required)
     });
