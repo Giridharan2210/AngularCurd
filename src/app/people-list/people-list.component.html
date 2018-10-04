@@ -1,0 +1,17 @@
+<div>
+    <h2>Promise implementation</h2>
+    <input #term type="text" (keyup)="peoplePromiseAPI(term.value)">
+    <hr>
+    <div *ngIf="results.length > 0">
+      <li *ngFor="let result of results">{{ result.name }} is a character with a height of {{ result.height }}.</li>
+    </div>
+  </div>
+
+<div>
+  <h2>Subscribe implementation</h2>
+  <input [formControl]="termObs">
+  <hr>
+  <div *ngIf="resultsObs.length > 0">
+    <li *ngFor="let resultObs of resultsObs">{{ resultObs.name }} is a character with a height of {{ resultObs.height }}.</li>
+  </div>
+</div>

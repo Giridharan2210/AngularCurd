@@ -1,0 +1,55 @@
+<form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" name="EmployeeID" formControlName="EmployeeID">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="FirstName" formControlName="FirstName" placeholder="First Name" required>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="LastName" formControlName="LastName" placeholder="Last Name"
+        required>
+      <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This Field is Required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input class="form-control" name="Position" formControlName="Position" placeholder="Position">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="EmpCode" formControlName="EmpCode" placeholder="Emp Code">
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="Office" formControlName="Office" placeholder="Office">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!employeeForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(employeeForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+</form>
+
+<br>
+
+<!-- <form [formGroup]="profileForm" (ngSubmit)="onProfileSubmit()">
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <input type="hidden" formControlName ="profileCode" value="2">
+          <input type="text" formControlName="firstName" placeholder="First Name" class="form-control">
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+          <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control">
+      </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
+      <input type="submit" value="Submit Me" class="btn btn-lg btn-block btn-info">
+      </div>
+  </div>
+</form> -->

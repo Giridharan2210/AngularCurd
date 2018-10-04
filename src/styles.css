@@ -1,0 +1,19 @@
+form.emp-form{
+    background-color: #dbdbdb;
+    border-radius: 4px;
+    padding: 10px;
+}
+div.validation-error{
+    color: red;
+    text-align: center;
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+}
+
+input.ng-invalid.ng-dirty{
+    border: 1px solid red;
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+   }
