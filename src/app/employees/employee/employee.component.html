@@ -4,16 +4,12 @@
       <input type="hidden" name="EmployeeID" formControlName="EmployeeID" [(ngModel)]="employeeService.selectedEmployee.EmployeeID">
       <input class="form-control" formControlName="FirstName" placeholder="First Name" [(ngModel)]="employeeService.selectedEmployee.FirstName">
       <div *ngIf="isFieldValid('FirstName')">
-        <span class="glyphicon glyphicon-remove form-control-feedback fix-error-icon"></span>
-        <span class="sr-only">(error)</span>
         <div class="error-msg">Please enter First Name</div>
       </div>
     </div>
     <div class="form-group col-md-6">
       <input class="form-control" formControlName="LastName" placeholder="Last Name" [(ngModel)]="employeeService.selectedEmployee.LastName">
       <div *ngIf="isFieldValid('LastName')">
-          <span class="glyphicon glyphicon-remove form-control-feedback fix-error-icon"></span>
-          <span class="sr-only">(error)</span>
           <div class="error-msg">Please enter Last Name</div>
         </div>
     </div>
