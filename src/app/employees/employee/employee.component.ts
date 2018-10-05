@@ -57,7 +57,7 @@ export class EmployeeComponent implements OnInit {
         this.employeeService.postEmployee(this.employeeForm.value)
           .subscribe(data => {
             // callback functions on post data 
-            this.resetForm();
+            this.employeeForm.reset();
             this.employeeService.getEmployeeList();
             this.toastr.success('New Record Added Succcessfully', 'Employee Register');
           })
@@ -65,7 +65,7 @@ export class EmployeeComponent implements OnInit {
       else {
         this.employeeService.putEmployee(this.employeeForm.value.EmployeeID, this.employeeForm.value)
         .subscribe(data => {
-          this.resetForm();
+          this.employeeForm.reset();
           this.employeeService.getEmployeeList();
           this.toastr.info('Record Updated Successfully!', 'Employee Register');
         });
