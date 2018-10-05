@@ -1,67 +1,43 @@
-<!-- <form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit()">
-  <input type="hidden" name="EmployeeID" formControlName="EmployeeID">
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="emp-form">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <input class="form-control" formControlName="FirstName" placeholder="First Name" required>
+      <input type="hidden" name="EmployeeID" formControlName="EmployeeID" [(ngModel)]="employeeService.selectedEmployee.EmployeeID">
+      <input class="form-control" formControlName="FirstName" placeholder="First Name" [(ngModel)]="employeeService.selectedEmployee.FirstName">
+      <div *ngIf="isFieldValid('FirstName')">
+        <span class="glyphicon glyphicon-remove form-control-feedback fix-error-icon"></span>
+        <span class="sr-only">(error)</span>
+        <div class="error-msg">Please enter First Name</div>
+      </div>
     </div>
     <div class="form-group col-md-6">
-      <input class="form-control"  formControlName="LastName" placeholder="Last Name" required> -->
-      <!-- <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This Field is Required.</div> -->
-    <!-- </div>
-  </div>
-  <div class="form-group">
-    <input class="form-control" formControlName="Position" placeholder="Position">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <input class="form-control" formControlName="EmpCode" placeholder="Emp Code">
-    </div>
-    <div class="form-group col-md-6">
-      <input class="form-control"  formControlName="Office" placeholder="Office">
+      <input class="form-control" formControlName="LastName" placeholder="Last Name" [(ngModel)]="employeeService.selectedEmployee.LastName">
+      <div *ngIf="isFieldValid('LastName')">
+          <span class="glyphicon glyphicon-remove form-control-feedback fix-error-icon"></span>
+          <span class="sr-only">(error)</span>
+          <div class="error-msg">Please enter Last Name</div>
+        </div>
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-8">
-      <button [disabled]="!employeeForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
-        <i class="fa fa-floppy-o"></i> Submit</button>
+    <div class="form-group col-md-12">
+      <input class="form-control" formControlName="Position" placeholder="Position" [(ngModel)]="employeeService.selectedEmployee.Position">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" formControlName="EmpCode" placeholder="Emp Code" [(ngModel)]="employeeService.selectedEmployee.EmpCode">
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" formControlName="Office" placeholder="Office" [(ngModel)]="employeeService.selectedEmployee.Office">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input type="submit" value="Submit" class="btn btn-lg btn-block btn-info">
     </div>
     <div class="form-group col-md-4">
       <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(employeeForm)">
         <i class="fa fa-repeat"></i> Reset</button>
     </div>
-  </div>
-</form> -->
-
-<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="emp-form">
-  <div class="form-row">
-      <div class="form-group col-md-6">
-          <input type="hidden" name="EmployeeID" formControlName="EmployeeID">
-          <input class="form-control" formControlName="FirstName" placeholder="First Name" required>
-      </div>
-      <div class="form-group col-md-6">
-          <input class="form-control"  formControlName="LastName" placeholder="Last Name" required>
-      </div>
-  </div>
-  <div class="form-row">
-      <div class="form-group col-md-12">
-      <input class="form-control" formControlName="Position" placeholder="Position">
-      </div>
-  </div>
-  <div class="form-row">
-      <div class="form-group col-md-6">
-          <input class="form-control" formControlName="EmpCode" placeholder="Emp Code">
-        </div>
-        <div class="form-group col-md-6">
-          <input class="form-control"  formControlName="Office" placeholder="Office">
-        </div>
-  </div>
-  <div class="form-row">
-      <div class="form-group col-md-6">
-         <input type="submit" value="Submit" class="btn btn-lg btn-block btn-info">
-      </div>
-      <div class="form-group col-md-4">
-          <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(employeeForm)">
-            <i class="fa fa-repeat"></i> Reset</button>
-        </div>
   </div>
 </form>
